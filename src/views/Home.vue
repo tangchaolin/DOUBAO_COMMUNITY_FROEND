@@ -1,21 +1,40 @@
 <template>
   <div >
-    <div class="box">🔔{{billboard}}</div>
+    <div class="box">🔔{{billboard.content}}</div>
 
   </div>
 
 </template>
 
 <script>
-
+import {getbillboard} from "@/api/billboard"
 
 export default {
-  name: 'HomeView',
+  name: 'Home',
   data(){
 
     return{
-      billboard:"版本更新"
+      billboard:{
+        content:''
+      }
     }
+  },
+
+  created(){
+    this.fetchBillboard()
+
+  },
+  methods:{
+    async fetchBillboard(){
+      getbillboard().then((value)=>{
+        const {data} = value
+        this.billboard=data
+      })
+
+
+    }
+
   }
+
 }
 </script>
