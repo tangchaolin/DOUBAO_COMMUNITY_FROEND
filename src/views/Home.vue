@@ -1,16 +1,25 @@
 <template>
   <div >
     <div class="box">🔔{{billboard.content}}</div>
-
+    <div class="columns" >
+        <div class="column is-three-quarters"><TopicList></TopicList></div>
+        <div class="column"><CardBar></CardBar></div>            
+    </div>
   </div>
 
 </template>
 
 <script>
-import {getbillboard} from "@/api/billboard"
+import {getBillboard} from "@/api/billboard"
+import TopicList from "@/views/post/Index"
+import CardBar from '@/views/card/CardBar'
 
 export default {
   name: 'Home',
+  components:{
+    CardBar,TopicList
+  },
+
   data(){
 
     return{
@@ -26,7 +35,7 @@ export default {
   },
   methods:{
     async fetchBillboard(){
-      getbillboard().then((value)=>{
+      getBillboard().then((value)=>{
         const {data} = value
         this.billboard=data
       })
