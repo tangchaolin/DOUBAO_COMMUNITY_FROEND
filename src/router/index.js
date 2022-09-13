@@ -16,6 +16,13 @@ const routes = [
     component: ()=>import("@/views/auth/Register"),
     meta:{ titile: '注册'}
   },
+    // 登录
+    { 
+      path: '/login',
+      name: 'login',
+      component: () => import('@/views/auth/Login'),
+      meta: { title: '登录' }
+    },
   {
   path: '/404',
   name: '404',
