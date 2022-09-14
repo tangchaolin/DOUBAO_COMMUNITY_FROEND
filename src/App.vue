@@ -1,11 +1,27 @@
 <template>
-  <div class="container">
-  
+  <div>
+    <div class="mb-5">
+      <Header></Header>
+    </div>
 
-    <router-view/>
+    <div class="container context">
+        <router-view :key="this.$route.fullPath"></router-view>
+    </div>
   </div>
 </template>
 
-<style>
 
+<script>
+import Header from "@/components/Layout/Header";
+export default {
+    name: "App",
+  components: { Header },
+};
+
+
+</script>
+<style scoped>
+.container {
+  min-height: 500px;
+}
 </style>
