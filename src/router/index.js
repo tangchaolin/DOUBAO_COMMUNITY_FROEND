@@ -14,7 +14,7 @@ const routes = [
     path: '/register',
     name: 'register',
     component: ()=>import("@/views/auth/Register"),
-    meta:{ titile: '注册'}
+    meta:{ title: '注册'}
   },
     // 登录
     { 
@@ -27,7 +27,7 @@ const routes = [
   path: '/404',
   name: '404',
   component: ()=>import("@/views/error/404"),
-  meta:{ titile: '404-NotFound'}
+  meta:{ title: '404-NotFound'}
   },
   {
   path: '*',
