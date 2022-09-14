@@ -1,5 +1,5 @@
-import { login } from '@/api/auth/auth'
-import { getToken, setToken } from '@/utils/auth'
+import { getUserInfo,login } from '@/api/auth/auth'
+import { getToken, setToken,setUser } from '@/utils/auth'
 
 const state = {
   token: getToken(), // token
@@ -9,6 +9,10 @@ const state = {
 const mutations = {
   SET_TOKEN_STATE: (state, token) => {
     state.token = token
+  },
+  SET_USER_STATE: (state, user) => {
+    state.user = user
+    
   }
 }
 
@@ -28,6 +32,26 @@ const actions = {
       })
     })
   },
+
+    // 获取用户信息
+    getInfo({ commit, state }) {
+      return new Promise((resolve, reject) => {
+        getUserInfo().then(response => {
+          const { data } = response
+          if (!data) {
+            commit('SET_TOKEN_STATE', '')
+            commit('SET_USER_STATE', '')
+            removeToken()
+            resolve()
+            reject('Verification failed, please Login again.')
+          }
+          commit('SET_USER_STATE', data)
+          resolve(data)
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    }
 }
 
 export default {
