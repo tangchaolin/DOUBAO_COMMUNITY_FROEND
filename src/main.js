@@ -10,7 +10,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/app.css'
 import '@/permission'
-
+import './assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css'
 import relativeTime from 'dayjs/plugin/relativeTime';
 // 国际化
 import 'dayjs/locale/zh-cn'
