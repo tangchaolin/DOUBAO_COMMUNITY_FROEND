@@ -11,6 +11,7 @@
     "buefy": "^0.9.21",
     "core-js": "^3.8.3",
     "darkreader": "^4.9.57",
+    "dayjs": "^1.11.5",
     "element-ui": "^2.15.9",
     "js-cookie": "^3.0.1",
     "nprogress": "^0.2.0",
