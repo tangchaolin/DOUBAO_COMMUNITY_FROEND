@@ -64,18 +64,24 @@
     </div>
 
     <div class="column">
-      作者信息
+            <!--作者-->
+      <Author
+        v-if="flag"
+        :user="topicUser"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import Author from '@/views/post/Author'
 import { deleteTopic, getTopic } from '@/api/post'
 import { mapGetters } from 'vuex'
 import Vditor from 'vditor'
 import 'vditor/dist/index.css'
 export default {
   name: 'TopicDetail',
+  components: { Author },
   computed: {
     ...mapGetters([
       'token','user'
