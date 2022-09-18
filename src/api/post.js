@@ -28,3 +28,14 @@ export function getTopic(id) {
       }
     })
   }
+
+  export function getRecommendTopics(id){
+    return request({
+      url: '/post/recommend',
+      method: 'get',
+      params:{
+        topicId: id 
+      }
+
+    })
+  }
