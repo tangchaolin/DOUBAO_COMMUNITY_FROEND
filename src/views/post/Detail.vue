@@ -60,7 +60,7 @@
           </div>
         </nav>
       </el-card>
-
+      <lv-comments :slug="topic.id" /> 
     </div>
 
     <div class="column">
@@ -76,6 +76,7 @@
 </template>
 
 <script>
+import LvComments from '@/components/Comment/Comments'
 import Author from '@/views/post/Author'
 import Recommend from '@/views/post/Recommend'
 import { deleteTopic, getTopic } from '@/api/post'
@@ -84,7 +85,7 @@ import Vditor from 'vditor'
 import 'vditor/dist/index.css'
 export default {
   name: 'TopicDetail',
-  components: { Author,Recommend },
+  components: { Author,Recommend,LvComments },
   computed: {
     ...mapGetters([
       'token','user'

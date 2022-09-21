@@ -12,6 +12,7 @@ import '@/assets/app.css'
 import '@/permission'
 import './assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css'
 import relativeTime from 'dayjs/plugin/relativeTime';
+import format from 'date-fns/format'
 // 国际化
 import 'dayjs/locale/zh-cn'
 const dayjs = require('dayjs');
@@ -23,6 +24,10 @@ dayjs.locale('zh-cn') // use locale globally
 dayjs().locale('zh-cn').format() // use locale in a specific instance
 
 Vue.prototype.dayjs = dayjs;//可以全局使用dayjs
+
+Vue.filter('date', (date) => {
+  return format(new Date(date), 'yyyy-MM-dd')
+})
 
 Vue.use(buefy)
 Vue.use(ElementUI)
