@@ -48,7 +48,16 @@ const routes = [
   path: '*',
   redirect:'/404',
   hidden :true
-  }
+  },
+  // 编辑
+  {
+    name: 'topic-edit',
+    path: '/topic/edit/:id',
+    component: () => import('@/views/post/Edit'),
+    meta: {
+      title: '编辑'
+    }
+  },
 
   
 

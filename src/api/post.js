@@ -39,3 +39,18 @@ export function getTopic(id) {
 
     })
   }
+
+  export function update(topic) {
+    return request({
+      url: '/post/update',
+      method: 'post',
+      data: topic
+    })
+  }
+  
+  export function deleteTopic(id) {
+    return request({
+      url: `/post/delete/${id}`,
+      method: 'delete'
+    })
+  }
