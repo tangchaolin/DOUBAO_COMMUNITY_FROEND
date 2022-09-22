@@ -58,6 +58,12 @@ const routes = [
       title: '编辑'
     }
   },
+  {
+    name: 'tag',
+    path: '/tag/:name',
+    component: () => import('@/views/tag/Tag'),
+    meta: { title: '主题列表' }
+  },
 
   
 
