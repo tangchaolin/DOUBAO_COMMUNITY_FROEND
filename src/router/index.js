@@ -71,6 +71,13 @@ const routes = [
     component: () => import('@/views/tag/Tag'),
     meta: { title: '主题列表' }
   },
+    // 用户主页
+    {
+      name: 'user',
+      path: '/member/:username/home',
+      component: () => import('@/views/user/Profile'),
+      meta: { title: '用户主页' }
+    },
 
   
 
