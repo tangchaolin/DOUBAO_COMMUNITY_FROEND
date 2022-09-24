@@ -58,6 +58,13 @@ const routes = [
       title: '编辑'
     }
   },
+    // 检索
+    {
+      name: 'search',
+      path: '/search',
+      component: () => import('@/views/Search'),
+      meta: { title: '检索' }
+    },
   {
     name: 'tag',
     path: '/tag/:name',
