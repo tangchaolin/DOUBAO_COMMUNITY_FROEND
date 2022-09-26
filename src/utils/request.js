@@ -10,7 +10,7 @@ const service = axios.create({
 
   // baseURL: 'https://api.example.com',
   // 超时时间 单位是ms，这里设置了5s的超时时间
-  timeout: 5 * 1000
+  timeout: 10 * 1000
 })
 
 
