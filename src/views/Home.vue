@@ -1,21 +1,49 @@
 <template>
   <div >
-    <div class="box">🔔{{billboard}}</div>
-
+    <div class="box">🔔{{billboard.content}}</div>
+    <div class="columns" >
+        <div class="column is-three-quarters"><TopicList></TopicList></div>
+        <div class="column"><CardBar></CardBar></div>            
+    </div>
   </div>
 
 </template>
 
 <script>
-
+import {getBillboard} from "@/api/billboard"
+import TopicList from "@/views/post/Index"
+import CardBar from '@/views/card/CardBar'
 
 export default {
-  name: 'HomeView',
+  name: 'Home',
+  components:{
+    CardBar,TopicList
+  },
+
   data(){
 
     return{
-      billboard:"版本更新"
+      billboard:{
+        content:''
+      }
     }
+  },
+
+  created(){
+    this.fetchBillboard()
+
+  },
+  methods:{
+    async fetchBillboard(){
+      getBillboard().then((value)=>{
+        const {data} = value
+        this.billboard=data
+      })
+
+
+    }
+
   }
+
 }
 </script>

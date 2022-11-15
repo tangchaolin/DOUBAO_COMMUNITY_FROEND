@@ -1,30 +1,35 @@
 <template>
-  <div class="container">
-  
+  <div>
+    <div class="mb-5">
+      <Header></Header>
+    </div>
 
-    <router-view/>
+    <div class="container context">
+        <router-view :key="this.$route.fullPath"></router-view>
+    </div>
+
+    <Footer></Footer>
   </div>
+
+
+
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-nav {
-  padding: 30px;
-}
+<script>
+import Header from "@/components/Layout/Header";
+import Footer from '@/components/Layout/Footer';
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+export default {
+    name: "App",
+  components: { Header,Footer },
+};
 
-nav a.router-link-exact-active {
-  color: #42b983;
+
+    Header
+</script>
+<style scoped>
+.container {
+  min-height: 500px;
 }
 </style>
